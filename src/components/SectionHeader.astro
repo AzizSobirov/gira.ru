@@ -1,0 +1,34 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: classname, ...rest } = Astro.props;
+---
+
+<div class="section-header" class:list={classname} {...rest}><slot /></div>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .section-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(10) rem(20);
+
+    &.variant-stats {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+
+      @include media("lg") {
+        flex-direction: column;
+      }
+    }
+
+    .text-h4 {
+      white-space: nowrap;
+    }
+  }
+</style>

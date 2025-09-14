@@ -77,7 +77,7 @@ const modal = {
             this.el.style.display = "none"; // Fully hide overlay
           }
         },
-        { once: true }
+        { once: true },
       );
     }
   },
@@ -284,7 +284,7 @@ let reviewsSwiper = new Swiper(".reviews .reviews__swiper .swiper", {
 
 // Initialize the fancybox
 const fancyboxTriggers = Array.from(
-  document.querySelectorAll("[data-fancybox]")
+  document.querySelectorAll("[data-fancybox]"),
 ).filter((trigger) => trigger.dataset.fancybox);
 if (fancyboxTriggers) {
   const fancyboxInstances = [];

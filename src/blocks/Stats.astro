@@ -1,0 +1,173 @@
+---
+import SectionHeader from "@/components/SectionHeader.astro";
+import { Section, H2, H3, P, Image, Icon, Button, H4 } from "ui";
+---
+
+<!-- Stats -->
+<Section name="stats">
+  <SectionHeader class="variant-stats">
+    <H4>[ о компании ]</H4>
+    <H2>
+      Потрясающая <i>архитектура</i> для пространств, в которых люди
+      <i>живут, работают</i> и <i>отдыхают</i>.
+    </H2>
+  </SectionHeader>
+
+  <div class="stats__list group-row">
+    <div class="stats__list-item group">
+      <H2>20</H2>
+      <P>лет. Опыт нашей работы</P>
+    </div>
+    <div class="stats__list-item group">
+      <H2>100+</H2>
+      <P>Реализованных проектов</P>
+    </div>
+    <div class="stats__list-item group">
+      <H2>500+</H2>
+      <P>Довольных клиентов</P>
+    </div>
+  </div>
+
+  <div class="stats__img">
+    <Image src="stats-img.png" />
+  </div>
+
+  <div class="stats__text group">
+    <P>
+      GIRA — архитектурная студия, создающая выразительные и функциональные
+      пространства для жизни, работы и отдыха. Мы объединяем эстетику и
+      продуманность в каждом проекте, чтобы архитектура становилась не просто
+      фоном, а частью повседневной жизни, вдохновляя и принося комфорт.
+    </P>
+    <Button href="/portfolio" variant="outline">Наше портфолио</Button>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .stats {
+    position: relative;
+    padding: rem(100) 0 rem(220) !important;
+
+    @include media("3xl") {
+      padding: rem(100) 0 !important;
+    }
+    @include media("lg") {
+      padding: rem(60) 0 !important;
+    }
+    @include media("sm") {
+      padding: rem(50) 0 !important;
+    }
+
+    &__list {
+      margin: rem(20) 0 rem(50);
+      width: 100%;
+
+      @include media("lg") {
+        margin: 0 0 rem(20);
+        justify-content: space-between;
+      }
+      @include media("sm") {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: rem(15);
+      }
+
+      &-item {
+        position: relative;
+        align-items: center;
+        text-align: center;
+        gap: rem(10);
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(-50%, -50%);
+          width: rem(1);
+          height: rem(92);
+          background: #d7d7d7;
+        }
+
+        &:nth-child(1) {
+          padding-right: rem(65);
+        }
+        &:nth-child(2) {
+          padding: 0 rem(65);
+        }
+        &:nth-child(3) {
+          padding-left: rem(65);
+
+          &::after {
+            display: none;
+          }
+        }
+
+        .text-p {
+          max-width: rem(160);
+        }
+
+        @include media("lg") {
+          flex-grow: 1;
+        }
+        @include media("sm") {
+          padding: 0 !important;
+
+          &::after {
+            display: none;
+          }
+
+          .text-p {
+            max-width: rem(140);
+          }
+        }
+      }
+    }
+
+    &__text {
+      width: 100%;
+      max-width: rem(540);
+      gap: rem(32);
+
+      @include media("lg") {
+        max-width: 100%;
+      }
+      @include media("sm") {
+        gap: rem(25);
+      }
+    }
+
+    &__img {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-20%);
+      width: rem(1530);
+      pointer-events: none;
+
+      @include media("3xl") {
+        bottom: 10%;
+        left: 60%;
+        width: 60%;
+      }
+      @include media("lg") {
+        all: unset;
+        margin-top: rem(-80);
+        margin-left: rem(-20);
+        width: 100%;
+        pointer-events: none;
+      }
+      @include media("sm") {
+        margin-top: rem(-40);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+</style>
