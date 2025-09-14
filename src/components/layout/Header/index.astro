@@ -1,113 +1,55 @@
 ---
-import { H2, Image, Icon, Button } from "ui";
-import "./index.scss";
+import { H2, Image, Icon, Button } from 'ui'
+import './index.scss'
 ---
 
 <header class="header">
   <div class="container">
-    <div class="header__top row-between">
-      <nav class="header__top-menu">
-        <ul class="menu">
-          <li class="menu-item"><a href="/pricing">Цены на услуги</a></li>
-          <li class="menu-item"><a href="/about">О клинике</a></li>
-          <li class="menu-item"><a href="/doctors">Специалисты</a></li>
-          <li class="menu-item"><a href="/reviews">Отзывы</a></li>
-          <li class="menu-item"><a href="/contacts">Контакты</a></li>
-        </ul>
-      </nav>
+    <a href="/" class="header__logo">
+      <Image src="logo.svg" alt="logo" />
+    </a>
 
-      <div class="header__top-additional group-row">
-        <div class="row" aria-label="Время работы ">
-          <Icon src="clock.svg" />
-          <div class="text-sm">Ежедневно с 9:00 до 20:00</div>
-        </div>
-        <div class="row" aria-label="Адрес клиники">
-          <Icon src="marker.svg" />
-          <div class="text-sm">г. Москва, ул. Грина, д.1 к.3</div>
-        </div>
-      </div>
+    <nav class="header__menu">
+      <ul class="menu">
+        <li class="menu-item"><a href="/">Главная</a></li>
+        <li class="menu-item"><a href="/portfolio">Портфолио</a></li>
+        <li class="menu-item"><a href="/pricing">Цены</a></li>
+        <li class="menu-item"><a href="/projects">Готовые проекты</a></li>
+        <li class="menu-item"><a href="/team">Команда</a></li>
+        <li class="menu-item">
+          <a href="/interior-design">Дизайн интерьера</a>
+        </li>
+        <li class="menu-item"><a href="/furnishing">Мебелирование</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+      </ul>
+    </nav>
 
-      <div class="header__top-contacts group-row">
-        <a href="#" title="Whatsapp" target="_blank">
-          <Icon src="whatsapp.svg" />
-        </a>
-
-        <a href="#" title="Telegram" target="_blank">
-          <Icon src="telegram.svg" />
-        </a>
-
-        <a
-          href="tel:+79163771754"
-          title="Телефон"
-          target="_blank"
-          class="text-lg"
-        >
-          +7 (916) 377-17-54
-        </a>
-      </div>
-    </div>
-
-    <div class="header__bottom row-between">
-      <a href="/" class="header__logo">
-        <Image src="logo.svg" alt="logo" />
+    <div class="header__contacts group-row">
+      <a
+        class="header__contacts-phone"
+        href="tel:+79999999999"
+        target="_blank"
+        title="Телефон"
+      >
+        +7 999 999-99-99
       </a>
 
-      <nav class="header__catalog">
-        <ul class="menu">
-          <li class="menu-item"><a href="#">Мануальная терапия</a></li>
-          <li class="menu-item"><a href="#">Остеопатия</a></li>
-          <li class="menu-item"><a href="#">Неврология </a></li>
-          <li class="menu-item menu-item-has-children">
-            <a href="#">Лечение грыжи </a>
-            <ul class="sub-menu">
-              <li class="menu-item">
-                <a href="#">Грыжа шейного отдела</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Грыжа поясничного отдела</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Грыжа грудного отдела</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item"><a href="#">Лечение протрузии </a></li>
-          <li class="menu-item"><a href="#">Рефлексотерапия </a></li>
-          <li class="menu-item menu-item-has-children">
-            <a href="#"> Симптомы </a>
-            <ul class="sub-menu">
-              <li class="menu-item">
-                <a href="#">Боль в спине</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Боль в шее</a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Боль в пояснице </a>
-              </li>
-              <li class="menu-item">
-                <a href="#">Головная боль</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header__bottom-contacts group-row">
-        <a
-          href="tel:+79163771754"
-          title="Телефон"
-          target="_blank"
-          class="text-xl text-primary font-bold row"
-        >
-          <Icon src="call.svg" />
-          +7 (916) 377-17-54
+      <div class="header__contacts-socials row">
+        <a href="#" target="_blank" title="WhatsApp">
+          <Icon src="whatsapp.svg" />
+        </a>
+        <a href="#" target="_blank" title="Telegram">
+          <Icon src="telegram.svg" />
         </a>
       </div>
+
+      <button class="header__contacts-button" data-modal="callback">
+        Получить расчет
+      </button>
     </div>
   </div>
 
-  <div class="mobile__menu">
+  <!-- <div class="mobile__menu">
     <div class="mobile__menu-tabs">
       <div
         class="mobile__menu-tab"
@@ -238,5 +180,5 @@ import "./index.scss";
       </div>
       <div id="menu-content"></div>
     </div>
-  </div>
+  </div> -->
 </header>
