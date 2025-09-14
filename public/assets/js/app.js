@@ -86,7 +86,7 @@ modal.init();
 
 // header
 const header = document.querySelector(".header");
-if (header) {
+if (!header) {
   const menu = header.querySelector(".header__catalog");
   const services = menu.querySelectorAll(".menu-item-has-children");
   let lastScrollY = window.scrollY;

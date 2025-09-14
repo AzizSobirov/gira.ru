@@ -1,0 +1,67 @@
+---
+import { Section, H2, H3, P, Image, Icon, Button, BgImg } from "ui";
+---
+
+<!-- Gira -->
+<Section name="gira">
+  <Fragment slot="header">
+    <BgImg src="gira-bg.png" />
+  </Fragment>
+
+  <div class="gira__video col">
+    <Image src="logo.svg" />
+    <button
+      class="gira__video-play"
+      aria-label="Play video"
+      data-fancybox="gira"
+      data-src="https://doctorkiselev-ru.vercel.app/assets/videos/hero.mp4"
+      data-poster="/assets/img/gira-bg.png"
+    >
+      <Icon src="play.svg" />
+    </button>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .gira {
+    position: relative;
+
+    &__video {
+      height: rem(580);
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: rem(24);
+      --icon-size: #{rem(68)};
+
+      img {
+        width: rem(280);
+      }
+
+      @include media("xl") {
+        height: rem(480);
+      }
+      @include media("lg") {
+        height: rem(400);
+
+        img {
+          width: rem(220);
+        }
+      }
+      @include media("sm") {
+        height: rem(260);
+        --icon-size: #{rem(50)};
+
+        img {
+          width: rem(140);
+        }
+      }
+      @include media("xs") {
+        height: rem(200);
+        gap: rem(20);
+      }
+    }
+  }
+</style>
