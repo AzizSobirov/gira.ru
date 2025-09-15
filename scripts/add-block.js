@@ -31,7 +31,8 @@ if (!fs.existsSync(baseDir)) {
 // Content templates for the files
 const templates = {
   astro: (fileName, fileNameCapital) => `---
-import { Section,H2,H3,P, Image, Icon, Button } from "ui";
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
 ---
 
 <!-- ${fileNameCapital} -->

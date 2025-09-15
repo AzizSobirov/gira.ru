@@ -19,7 +19,7 @@ main {
 }
 
 section {
-  padding: rem(50) 0;
+  padding: rem(80) 0;
 
   &:first-child {
     padding-top: 0;
@@ -47,4 +47,4 @@ section {
   }
 }
 
-// @include show(".gira", true, true);
+@include show(".portfolio", true, true);

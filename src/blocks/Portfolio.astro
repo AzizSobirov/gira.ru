@@ -1,0 +1,308 @@
+---
+import { Section, H2, H3, H4, P, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+
+interface Props {
+  isMain?: boolean;
+}
+
+const { isMain = false } = Astro.props;
+---
+
+<!-- Portfolio -->
+<Section name="portfolio" main={isMain}>
+  <SectionHeader>
+    <H4>[ наше портфолио ]</H4>
+    <H2> Форма <i>комфорта</i> — в <i>наших проектах</i>. </H2>
+  </SectionHeader>
+
+  <div class="portfolio__list">
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/2.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/2.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio__card">
+      <Image class="portfolio__card-img" src="portfolio/3.png" />
+      <div class="portfolio__card-content">
+        <div class="portfolio__card-category text-p">
+          Индивидуальный жилой дом
+        </div>
+        <div class="portfolio__card-text">
+          <H3>Selina</H3>
+          <P>220 м²</P>
+        </div>
+        <a href="/project" class="portfolio__card-link">
+          <Image src="icons/arrow-right.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {
+    !isMain && (
+      <Button href="/portfolio" variant="outline">
+        Смотреть портфолио
+      </Button>
+    )
+  }
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .portfolio {
+    position: relative;
+    color: #fff;
+    background: rgba($color: #000000, $alpha: 0.8);
+
+    &__list {
+      width: 100%;
+      columns: 3;
+      column-gap: rem(20);
+      @include space-y(rem(20));
+
+      @include media("xl") {
+        gap: rem(15);
+        @include space-y(rem(15));
+      }
+      @include media("lg") {
+        columns: 2;
+      }
+      @include media("sm") {
+        gap: rem(10);
+        @include space-y(rem(10));
+      }
+      @include media("xs") {
+        gap: rem(8);
+        @include space-y(rem(8));
+      }
+    }
+
+    &__card {
+      position: relative;
+      break-inside: avoid;
+
+      &:hover .portfolio__card-content {
+        opacity: 1;
+      }
+
+      &-img {
+        width: 100%;
+      }
+
+      &-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: rem(25) rem(25) rem(35);
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.6);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(20);
+        opacity: 0;
+        transition: var(--transition-ease);
+
+        @include media("3xl") {
+          padding: rem(20) rem(20) rem(30);
+        }
+        @include media("sm") {
+          padding: rem(10);
+        }
+      }
+
+      &-category {
+        padding: rem(15) rem(30);
+        border: var(--border);
+
+        @include media("3xl") {
+          padding: rem(10) rem(20);
+        }
+        @include media("sm") {
+          display: none;
+        }
+      }
+
+      &-text {
+        margin: auto 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(10);
+
+        @include media("xs") {
+          gap: rem(5);
+        }
+      }
+
+      &-link {
+        align-self: flex-end;
+
+        @include media("sm") {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          img {
+            display: none;
+          }
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+        }
+      }
+    }
+
+    .container > .btn {
+      margin-top: rem(-20);
+      color: #fff;
+      align-self: flex-end;
+
+      &:hover {
+        color: #000;
+        background: #fff;
+      }
+
+      @include media("lg") {
+        margin-top: rem(-10);
+      }
+    }
+  }
+</style>

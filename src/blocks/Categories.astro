@@ -1,0 +1,115 @@
+---
+import { Section, H2, H3, P, Image, Icon, Button, H4, BgImg } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Categories -->
+<Section name="categories">
+  <SectionHeader class="variant-categories">
+    <H4>[ типовые и индивидуальные ]</H4>
+    <H2> Проекты </H2>
+  </SectionHeader>
+
+  <div class="categories__list">
+    <div class="categories__card">
+      <BgImg src="categories/1.png" />
+      <H2>Каркасные <br /> дома</H2>
+    </div>
+
+    <div class="categories__card">
+      <BgImg src="categories/2.png" />
+      <H3>Дома из<br /> газоблока</H3>
+    </div>
+
+    <div class="categories__card">
+      <BgImg src="categories/3.png" />
+      <H3>Ремонт </H3>
+    </div>
+
+    <div class="categories__card">
+      <BgImg src="categories/4.png" />
+      <H3>Дизайн-проект <br /> квартир и домов</H3>
+    </div>
+
+    <div class="categories__card">
+      <BgImg src="categories/5.png" />
+      <H3> Дома из <br /> монолита</H3>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .categories {
+    position: relative;
+
+    .container {
+      gap: 0;
+    }
+
+    &__list {
+      margin-top: rem(-25);
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+
+      @include media("xl") {
+        margin-top: rem(-20);
+        gap: rem(15);
+      }
+      @include media("lg") {
+        margin-top: rem(-15);
+        gap: rem(12);
+      }
+      @include media("sm") {
+        margin-top: rem(-10);
+        grid-template-columns: 1fr;
+        gap: rem(10);
+      }
+    }
+
+    &__card {
+      position: relative;
+      padding: rem(20) rem(30);
+      height: rem(538);
+      color: #fff;
+      text-align: right;
+
+      @include media("3xl") {
+        height: rem(420);
+      }
+      @include media("xl") {
+        height: rem(340);
+      }
+      @include media("lg") {
+        height: rem(300);
+      }
+      @include media("sm") {
+        padding: rem(15) rem(20) !important;
+        height: rem(220) !important;
+      }
+
+      &:nth-child(1) {
+        height: 100%;
+        grid-row-start: span 2;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        height: rem(340);
+
+        @include media("3xl") {
+          height: rem(280);
+        }
+        @include media("xl") {
+          height: rem(240);
+        }
+        @include media("lg") {
+          height: rem(200);
+        }
+      }
+    }
+  }
+</style>
