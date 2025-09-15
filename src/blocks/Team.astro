@@ -1,0 +1,59 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Team -->
+<Section name="team">
+  <SectionHeader>
+    <H4>[ наша команда ]</H4>
+    <H2> <i>Те</i>, кто <i>стоит</i> за <i>каждым проектом</i>. </H2>
+  </SectionHeader>
+
+  <div class="team__swiper">
+    <div class="team__swiper-main swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="team__swiper-fullname">ФАМИЛЬЕВНА КАРИНА</div>
+          <div class="team__swiper-job">ДИЗАЙНЕР ИНТЕРЬЕРОВ</div>
+          <Image src="team/3-full.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="team__swiper-thumbs swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"></div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .team {
+    position: relative;
+
+    &__swiper {
+      position: relative;
+      width: 100%;
+      height: rem(880);
+
+      &-main {
+        width: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .swiper-slide {
+          transition: var(--transition-ease);
+          opacity: 0 !important;
+
+          &.swiper-slide-active {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+  }
+</style>
