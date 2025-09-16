@@ -1,5 +1,6 @@
 export { default as Advantages } from "./Advantages.astro";
 export { default as Categories } from "./Categories.astro";
+export { default as Certificates } from "./Certificates.astro";
 export { default as Gira } from "./Gira.astro";
 export { default as Hero } from "./Hero.astro";
 export { default as Portfolio } from "./Portfolio.astro";

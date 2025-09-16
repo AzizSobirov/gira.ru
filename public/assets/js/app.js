@@ -260,6 +260,32 @@ if (currentYear) {
 }
 
 // Swiper
+let certificatesSwiper = new Swiper(
+  ".certificates .certificates__swiper .swiper",
+  {
+    slidesPerView: "auto",
+    spaceBetween: 12,
+    navigation: {
+      nextEl: ".certificates .swiper-button-next",
+      prevEl: ".certificates .swiper-button-prev",
+    },
+    breakpoints: {
+      475: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      1025: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  },
+);
+
 let reviewsSwiper = new Swiper(".reviews .reviews__swiper .swiper", {
   slidesPerView: "auto",
   spaceBetween: 12,
