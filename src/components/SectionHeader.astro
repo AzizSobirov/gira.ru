@@ -35,6 +35,16 @@ const { class: classname, ...rest } = Astro.props;
       }
     }
 
+    &.variant-steps {
+      text-align: right;
+      align-items: flex-end;
+
+      @include media("sm") {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+
     .text-h4 {
       white-space: nowrap;
     }

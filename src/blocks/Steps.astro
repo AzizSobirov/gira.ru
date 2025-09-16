@@ -1,0 +1,136 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Steps -->
+<Section name="steps">
+  <SectionHeader class="variant-steps">
+    <H4>[ этапы сотрудничества ]</H4>
+    <H2> <i>Шаг</i> за шагом, <i>к дому мечты</i> </H2>
+  </SectionHeader>
+
+  <div class="steps__list group-row">
+    <div class="steps__item row">
+      <div class="steps__item-count">
+        <span>01</span>
+      </div>
+      <P>Знакомство, сбор и подготовка исходных данных</P>
+    </div>
+    <div class="steps__item row">
+      <div class="steps__item-count">
+        <span>02</span>
+      </div>
+      <P>Разработка идеального проекта</P>
+    </div>
+    <div class="steps__item row">
+      <div class="steps__item-count">
+        <span>03</span>
+      </div>
+      <P>Организация тендера на строительные работы</P>
+    </div>
+    <div class="steps__item row">
+      <div class="steps__item-count">
+        <span>04</span>
+      </div>
+      <P>Контроль и помощь при строительстве</P>
+    </div>
+    <div class="steps__item row">
+      <div class="steps__item-count">
+        <span>05</span>
+      </div>
+      <P>
+        Въезд в готовый дом — это финальный и самый ожидаемый этап, когда вы
+        принимаете объект после завершения всех строительных и отделочных работ.
+        Мы сопровождаем этот процесс до самого конца: проверяем соответствие
+        выполненного проекта всем согласованным решениям, контролируем качество
+        исполнения, передаём вам полный комплект документов и даём рекомендации
+        по дальнейшей эксплуатации. Вы получаете не просто ключи, а полностью
+        готовое, проверенное и продуманное до мелочей пространство для жизни.
+      </P>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .steps {
+    position: relative;
+
+    &__list {
+      width: 100%;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: rem(55) rem(48);
+
+      @include media("lg") {
+        gap: rem(30) rem(20);
+      }
+      @include media("sm") {
+        gap: rem(25);
+      }
+    }
+
+    &__item {
+      flex: 1 0 rem(380);
+      gap: rem(10);
+
+      @include media("lg") {
+        flex-basis: rem(280);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      @include media("sm") {
+        &:not(:last-child) {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      &:last-child {
+        flex-basis: 100%;
+      }
+
+      &-count {
+        min-width: rem(180);
+        width: rem(180);
+        height: rem(88);
+        color: #fff;
+        font-size: rem(128);
+        font-weight: 600;
+        text-align: right;
+        line-height: 0.7;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        span {
+          margin-right: rem(-18);
+        }
+
+        @include media("lg") {
+          min-width: rem(140);
+          width: rem(140);
+          height: rem(65);
+          font-size: rem(92);
+
+          span {
+            margin-right: rem(-12);
+          }
+        }
+        @include media("sm") {
+          min-width: rem(90);
+          width: rem(90);
+          height: rem(45);
+          font-size: rem(64);
+
+          span {
+            margin-right: rem(-8);
+          }
+        }
+      }
+    }
+  }
+</style>
