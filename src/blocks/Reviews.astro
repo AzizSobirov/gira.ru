@@ -1,0 +1,277 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Reviews -->
+<Section name="reviews">
+  <SectionHeader>
+    <H4>[ отзывы клиентов ]</H4>
+    <H2> Ваши <i>впечатления</i> — наша <i>гордость</i></H2>
+  </SectionHeader>
+
+  <div class="wrapper">
+    <div class="reviews__swiper group">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            data-fancybox="reviews"
+            data-src="/assets/img/reviews/1.png"
+          >
+            <BgImg src="reviews/1.png" />
+
+            <div class="group">
+              <div class="col">
+                <Icon src="play-outlined.svg" />
+                <P>Смотреть <br /> видео-отзыв</P>
+              </div>
+              <div class="text-2xl uppercase">АНАТОЛИЙ</div>
+            </div>
+          </div>
+
+          <div
+            class="swiper-slide"
+            data-fancybox="reviews"
+            data-src="/assets/img/reviews/2.png"
+          >
+            <BgImg src="reviews/2.png" />
+          </div>
+
+          <div
+            class="swiper-slide"
+            data-fancybox="reviews"
+            data-src="/assets/img/reviews/1.png"
+          >
+            <BgImg src="reviews/1.png" />
+          </div>
+
+          <div
+            class="swiper-slide"
+            data-fancybox="reviews"
+            data-src="/assets/img/reviews/2.png"
+          >
+            <BgImg src="reviews/2.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__swiper-nav">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="reviews__platforms group">
+      <P>Так же смотрите отзывы о нас на площадках:</P>
+
+      <ul class="reviews__platforms-list">
+        <li class="reviews__platforms-item">
+          <Image src="logos/yandex.png" />
+          <span>4.9/5</span>
+        </li>
+        <li class="reviews__platforms-item">
+          <Image src="logos/google.png" />
+          <span>4.9/5</span>
+        </li>
+        <li class="reviews__platforms-item">
+          <Image src="logos/2gis.png" />
+          <span>4.9/5</span>
+        </li>
+        <li class="reviews__platforms-item">
+          <Image src="logos/zoon.png" />
+          <span>4.9/5</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .reviews {
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr rem(400);
+      gap: rem(40) rem(20);
+
+      @include media("3xl") {
+        grid-template-columns: 1fr rem(320);
+      }
+      @include media("lg") {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__swiper {
+      width: 100%;
+      gap: rem(40);
+
+      @include media("sm") {
+        gap: rem(20);
+      }
+
+      .swiper {
+        margin: 0 !important;
+        width: 100%;
+        height: rem(538);
+        display: grid;
+
+        @include media("3xl") {
+          height: rem(450);
+        }
+        @include media("lg") {
+          overflow: visible;
+        }
+        @include media("sm") {
+          height: rem(400);
+        }
+        @include media("xs") {
+          height: rem(380);
+        }
+      }
+
+      .swiper-wrapper {
+        min-width: 0 !important;
+      }
+
+      .swiper-slide {
+        position: relative;
+        height: 100%;
+        cursor: zoom-in;
+        color: #fff;
+        font-weight: 300;
+
+        @include media("lg") {
+          width: rem(320);
+        }
+        @include media("xs") {
+          width: rem(280);
+        }
+
+        .bg-img {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: #000000, $alpha: 0.5);
+          }
+        }
+
+        .group {
+          padding: rem(20);
+          width: 100%;
+          height: 100%;
+          justify-content: space-between;
+        }
+
+        .col {
+          align-self: flex-end;
+          text-align: right;
+          align-items: flex-end;
+          gap: rem(12);
+          --icon-size: #{rem(52)};
+        }
+      }
+
+      &-nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: rem(25);
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          all: unset;
+          width: rem(50);
+          height: rem(50);
+          color: #fff;
+          background-color: #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: var(--transition-ease);
+          cursor: pointer;
+
+          &::after {
+            font-size: rem(20);
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &.swiper-button-disabled {
+            color: #666666;
+            background: #b8b8b8;
+            cursor: not-allowed;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__platforms {
+      width: 100%;
+      gap: rem(40);
+
+      @include media("lg") {
+        gap: rem(30);
+      }
+      @include media("sm") {
+        gap: rem(20);
+      }
+
+      &-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(20);
+
+        @include media("lg") {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include media("sm") {
+          grid-template-columns: 1fr;
+          gap: rem(15);
+        }
+        @include media("xs") {
+          gap: rem(12);
+        }
+      }
+
+      &-item {
+        padding: rem(8);
+        width: 100%;
+        border: rem(1) solid #dfdfdf;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20);
+
+        img {
+          width: auto;
+          height: rem(46);
+        }
+
+        span {
+          width: rem(100);
+          height: rem(46);
+          color: #fff;
+          background: #333333;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+</style>
