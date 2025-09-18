@@ -1,4 +1,5 @@
 export { default as Advantages } from "./Advantages.astro";
+export { default as Application } from "./Application.astro";
 export { default as Categories } from "./Categories.astro";
 export { default as Certificates } from "./Certificates.astro";
 export { default as Gira } from "./Gira.astro";

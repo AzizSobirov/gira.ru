@@ -4,12 +4,130 @@ import SectionHeader from "@/components/SectionHeader.astro";
 ---
 
 <!-- Application -->
-<Section name="application"> .application </Section>
+<Section name="application">
+  <div class="application__img">
+    <Image src="form-img.png" />
+  </div>
+
+  <div class="application__content group">
+    <SectionHeader class="variant-categories">
+      <H4>[ оставить заявку ]</H4>
+      <H2> <i>Вы</i> в одном шаге от дома <i>вашей мечты </i></H2>
+    </SectionHeader>
+
+    <P
+      >Оставьте заявку на расчет проекта, мы перезвоним вам для уточнения
+      деталей</P
+    >
+
+    <form class="application__form the-form">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <input
+        type="text"
+        name="phone"
+        placeholder="+7 (___) ___-__-__"
+        required
+      />
+      <button type="submit">Отправить</button>
+      <div class="text-xs font-light">
+        Отправляя заявку я даю согласие на обработку персональных данных
+      </div>
+    </form>
+  </div>
+</Section>
 
 <style lang="scss" is:global>
   @use "scss/helpers" as *;
 
   .application {
     position: relative;
+
+    .container {
+      flex-direction: row;
+      align-items: stretch;
+      gap: rem(20);
+
+      @include media("lg") {
+        flex-direction: column;
+        gap: rem(30);
+      }
+    }
+
+    &__content {
+      gap: rem(35);
+
+      @include media("sm") {
+        gap: rem(20);
+      }
+
+      .text-p {
+        margin-top: auto;
+      }
+    }
+
+    &__img {
+      height: rem(432);
+
+      @include media("lg") {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 100vw;
+        height: auto;
+        max-height: rem(450);
+      }
+
+      img {
+        min-width: calc(100% + rem(400));
+        transform: translateX(rem(-400));
+        height: 100%;
+        object-fit: cover;
+
+        @include media("lg") {
+          min-width: 100%;
+          transform: none;
+        }
+      }
+    }
+
+    &__form {
+      width: 100%;
+      max-width: rem(660);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(30) rem(20);
+
+      @include media("sm") {
+        grid-template-columns: 1fr;
+        gap: rem(15);
+      }
+
+      input {
+        padding: 0 rem(10);
+        width: 100%;
+        height: rem(42);
+        border: var(--border);
+      }
+
+      button {
+        width: 100%;
+        height: rem(42);
+        color: #fff;
+        background: var(--text-color);
+        transition: var(--transition-ease);
+
+        &:hover {
+          box-shadow:
+            0 0 0 1px var(--background),
+            0 0 0 2px #000;
+        }
+      }
+
+      .text-xs {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 </style>
