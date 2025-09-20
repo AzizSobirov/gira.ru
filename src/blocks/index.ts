@@ -5,6 +5,7 @@ export { default as Certificates } from "./Certificates.astro";
 export { default as Gira } from "./Gira.astro";
 export { default as Hero } from "./Hero.astro";
 export { default as Portfolio } from "./Portfolio.astro";
+export { default as Products } from "./Products.astro";
 export { default as Reviews } from "./Reviews.astro";
 export { default as Services } from "./Services.astro";
 export { default as Stats } from "./Stats.astro";

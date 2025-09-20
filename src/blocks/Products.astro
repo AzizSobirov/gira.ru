@@ -1,0 +1,221 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+
+interface Props {
+  isMain?: boolean;
+}
+
+const { isMain = false } = Astro.props;
+---
+
+<!-- Products -->
+<Section name="products" main={isMain}>
+  {
+    !isMain && (
+      <blockquote class="products__blockquote col">
+        <hr />
+        <P>
+          Хотите приобрести готовый архитектурный проект без лишних затрат и ожиданий? GIRA
+          предлагает вам продуманные решения с современным дизайном и продуманной планировкой.
+          Каждый проект в нашей коллекции — это результат индивидуальной работы, сочетающей
+          эстетичную архитектуру и функциональность. Вы экономите не только деньги, но и время:
+          вместо месяцев ожидания вы получаете готовую документацию, готовую к строительству. Нужно
+          адаптировать под ваш участок или внести изменения? Мы с легкостью доработаем проект под
+          ваши задачи.
+          <br />
+          <i>Выбирайте готовое — стройте с уверенностью и стилем вместе с GIRA.</i>
+        </P>
+      </blockquote>
+    )
+  }
+
+  <div class="products__list">
+    {
+      Array.from({ length: !isMain ? 8 : 16 }).map((_, i) => (
+        <div class="products__card">
+          <a href="/product" class="products__card-link" />
+
+          <div class="products__card-img">
+            <Image src="products/1.png" />
+          </div>
+          <div class="products__card-content">
+            <div class="products__card-category">[ GR999 ]</div>
+            <div class="products__card-title">Проект одноэтажного дома на узком участке </div>
+            <ul class="products__card-details">
+              <li>Площадь: 150 м²</li>
+              <li>Спальни: 3</li>
+              <li>Санузлы: 2</li>
+              <li>Гараж: Есть</li>
+            </ul>
+            <Button href="/product" variant="outline">
+              Подробнее
+            </Button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <Button class="products__more" href="/products"> СМОТРЕТЬ БОЛЬШЕ ГОТОВЫХ ПРОЕКТОВ </Button>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .products {
+    position: relative;
+
+    &__blockquote {
+      width: 100%;
+      align-items: center;
+      gap: rem(50);
+
+      @include media("3xl") {
+        gap: rem(40);
+      }
+      @include media("sm") {
+        gap: rem(20);
+      }
+
+      hr {
+        height: rem(1);
+        width: 100%;
+        max-width: rem(400);
+        background: var(--gray);
+
+        @include media("lg") {
+          max-width: 60%;
+        }
+      }
+
+      p {
+        width: 100%;
+        max-width: rem(1190);
+        text-align: center;
+        line-height: 1.7;
+
+        @include media("xl") {
+          max-width: 80%;
+        }
+        @include media("sm") {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+      gap: rem(60) rem(20);
+
+      @include media("3xl") {
+        gap: rem(40) rem(20);
+      }
+      @include media("sm") {
+        gap: rem(30) rem(15);
+      }
+      @include media("xs") {
+        grid-template-columns: 1fr;
+        gap: rem(20);
+      }
+    }
+
+    &__card {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(24);
+
+      @include media("sm") {
+        gap: rem(15);
+      }
+
+      &:hover .btn {
+        color: #fff;
+        background: #000;
+      }
+
+      &-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+
+      &-img {
+        height: rem(216);
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(14);
+
+        @include media("sm") {
+          gap: rem(10);
+        }
+      }
+
+      &-category {
+        font-size: clamp(1.125rem, 1.0947rem + 0.1294vw, 1.25rem);
+        color: var(--gray);
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        font-size: clamp(1.125rem, 1.0947rem + 0.1294vw, 1.25rem);
+        font-weight: 300;
+      }
+
+      &-details {
+        margin: rem(10) 0;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 300;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(5);
+
+        @include media("sm") {
+          font-size: rem(14);
+        }
+      }
+
+      .btn {
+        @include media("xs") {
+          width: 100%;
+        }
+      }
+    }
+
+    &__more {
+      margin-top: rem(20);
+      width: 100%;
+      max-width: rem(576);
+      align-self: center;
+
+      @include media("sm") {
+        font-size: rem(14);
+      }
+      @include media("xs") {
+        font-size: rem(12);
+      }
+    }
+  }
+</style>
