@@ -1,4 +1,4 @@
-@use 'scss/helpers' as *;
+@use "scss/helpers" as *;
 
 .header {
   position: fixed;
@@ -13,18 +13,18 @@
   transition: var(--transition-ease);
   z-index: 10;
 
-  @include media('xl') {
+  @include media("xl") {
     height: rem(120);
   }
-  @include media('lg') {
+  @include media("lg") {
     position: static;
     height: rem(100);
   }
-  @include media('sm') {
+  @include media("sm") {
     height: rem(80);
     font-size: rem(18);
   }
-  @include media('xxs') {
+  @include media("xxs") {
     font-size: rem(16);
   }
 
@@ -55,7 +55,7 @@
   }
 
   &__menu {
-    @include media('lg') {
+    @include media("lg") {
       display: none;
     }
 
@@ -66,7 +66,7 @@
       justify-content: flex-start;
       gap: rem(15) rem(20);
 
-      @include media('xl') {
+      @include media("xl") {
         font-size: rem(14);
         gap: rem(10) rem(15);
       }
@@ -96,7 +96,7 @@
       letter-spacing: 0.07em;
       transition: var(--transition-ease);
 
-      @include media('sm') {
+      @include media("sm") {
         display: none;
       }
 
@@ -110,30 +110,29 @@
 
 .mobile__menu {
   position: fixed;
-  bottom: rem(15);
+  bottom: rem(12);
   left: 50%;
   transform: translateX(-50%);
   display: none;
   z-index: 10;
 
-  @include media('xl') {
+  @include media("lg") {
     display: flex;
   }
-  @include media('xs') {
+  @include media("xs") {
     width: 100%;
     max-width: calc(100% - rem(30));
   }
-  @include media('350px') {
+  @include media("350px") {
     max-width: calc(100% - rem(10));
   }
 
   &-tabs {
-    padding: rem(6) rem(18) rem(6) rem(6);
+    padding-right: rem(15);
+    min-width: rem(320);
     width: 100%;
-    height: rem(48);
+    height: rem(65);
     background: #fff;
-    border-radius: rem(15);
-    box-shadow: 0 0 rem(10) 0 rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -146,24 +145,25 @@
     align-items: center;
 
     &:first-child {
-      width: rem(115);
+      width: rem(65);
       height: 100%;
       color: #fff;
-      background: var(--primary);
-      border-radius: rem(10);
+      background: #313131;
       flex-direction: row;
       justify-content: center;
-      gap: rem(6);
 
       svg {
-        width: rem(20);
         height: rem(20);
-        color: var(--text-color);
+        width: auto;
       }
 
-      span {
-        margin-top: -1px;
-        font-size: rem(14);
+      &.active {
+        .icon-menu {
+          display: none;
+        }
+        .icon-close {
+          display: block;
+        }
       }
     }
 
@@ -172,31 +172,51 @@
       transition: var(--transition-ease);
     }
 
+    i {
+      width: rem(40);
+      height: rem(40);
+      border: 1px solid #313131;
+      transition: var(--transition-ease);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     svg {
-      color: var(--primary);
-      width: rem(15);
-      height: rem(15);
+      color: #313131;
     }
 
     span {
-      margin-top: rem(2);
-      font-size: rem(13);
+      margin-top: rem(3);
+      font-size: rem(12);
+      font-weight: 300;
+      color: #313131;
       text-align: center;
+    }
+
+    &.active {
+      i {
+        background: #313131;
+      }
+
+      svg {
+        color: #fff;
+      }
     }
 
     .group {
       position: absolute;
       bottom: calc(100% + rem(10));
-      padding: 0 rem(6);
+      padding: 0;
       max-height: 0;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-      background: #fff;
-      border-radius: rem(20);
       gap: rem(12);
       transition: var(--transition-ease);
       overflow: hidden;
-      --icon-size: #{rem(32)};
+
+      a {
+        width: rem(40);
+        height: rem(40);
+      }
 
       a:first-child {
         margin-top: rem(6);
@@ -207,8 +227,9 @@
       }
 
       img {
-        background: #fff;
-        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
   }
@@ -216,12 +237,12 @@
   &-content {
     position: absolute;
     padding: rem(20) rem(20) rem(25);
-    bottom: rem(60);
+    bottom: rem(80);
     min-height: rem(180);
     width: 100%;
-    background: #fff;
+    color: #fff;
+    background: #313131;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-    border-radius: rem(15);
     display: none;
     align-items: center;
     transition: var(--transition-ease);
@@ -245,9 +266,8 @@
       gap: rem(20);
 
       & > .menu-item > a {
-        color: var(--primary);
+        color: #fff;
         font-size: 1rem;
-        font-weight: 700;
       }
 
       &-item-has-children {
@@ -272,7 +292,7 @@
         gap: rem(8);
 
         &::before {
-          content: '';
+          content: "";
           display: block;
           width: rem(5);
           height: rem(5);

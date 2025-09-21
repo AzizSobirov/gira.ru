@@ -86,30 +86,9 @@ modal.init();
 
 // header
 const header = document.querySelector(".header");
-if (!header) {
-  const menu = header.querySelector(".header__catalog");
+if (header) {
+  const menu = header.querySelector(".header__menu");
   const services = menu.querySelectorAll(".menu-item-has-children");
-  let lastScrollY = window.scrollY;
-
-  if (window.innerWidth > 1280) {
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector("header");
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        // Scrolling Down
-        header.classList.remove("up");
-        header.classList.add("down");
-      } else {
-        // Scrolling Up
-        header.classList.remove("down");
-        header.classList.add("up");
-      }
-
-      header.classList.toggle("sticky", currentScrollY > 0);
-      lastScrollY = currentScrollY;
-    });
-  }
 
   services.forEach((service) => {
     const subMenu = service.querySelector(".sub-menu");
@@ -204,22 +183,12 @@ if (!header) {
 
         if (tab.dataset.toggle == "menu") {
           // Get the top menu content
-          const topMenu = header.querySelector(".header__top-menu .menu");
+          const topMenu = header.querySelector(".header__menu .menu");
           const topMenuHtml = topMenu ? topMenu.innerHTML : "";
 
           tabsContent.innerHTML = `
             <ul class="menu">
             ${topMenuHtml}
-            </ul>
-          `;
-        } else if (tab.dataset.toggle == "catalog") {
-          // Get the bottom menu (catalog) content
-          const catalogMenu = header.querySelector(".header__catalog .menu");
-          const catalogMenuHtml = catalogMenu ? catalogMenu.innerHTML : "";
-
-          tabsContent.innerHTML = `
-            <ul class="menu">
-            ${catalogMenuHtml}
             </ul>
           `;
         }
