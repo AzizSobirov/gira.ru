@@ -1,10 +1,16 @@
 ---
 import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
 import SectionHeader from "@/components/SectionHeader.astro";
+
+interface Props {
+  isMain?: boolean;
+}
+
+const { isMain = false } = Astro.props;
 ---
 
 <!-- Team -->
-<Section name="team">
+<Section name="team" main={isMain}>
   <SectionHeader>
     <H4>[ наша команда ]</H4>
     <H2> <i>Те</i>, кто <i>стоит</i> за <i>каждым проектом</i>. </H2>
@@ -154,6 +160,17 @@ import SectionHeader from "@/components/SectionHeader.astro";
 
   .team {
     position: relative;
+
+    &.is-main {
+      padding-top: rem(100);
+
+      @include media("lg") {
+        padding-top: rem(80);
+      }
+      @include media("sm") {
+        padding-top: rem(50);
+      }
+    }
 
     .container {
       gap: rem(20);

@@ -1,10 +1,16 @@
 ---
 import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
 import SectionHeader from "@/components/SectionHeader.astro";
+
+interface Props {
+  isMain?: boolean;
+}
+
+const { isMain = false } = Astro.props;
 ---
 
 <!-- Application -->
-<Section name="application">
+<Section name="application" main={isMain}>
   <div class="application__img">
     <Image src="form-img.png" />
   </div>
@@ -15,19 +21,11 @@ import SectionHeader from "@/components/SectionHeader.astro";
       <H2> <i>Вы</i> в одном шаге от дома <i>вашей мечты </i></H2>
     </SectionHeader>
 
-    <P
-      >Оставьте заявку на расчет проекта, мы перезвоним вам для уточнения
-      деталей</P
-    >
+    <P>Оставьте заявку на расчет проекта, мы перезвоним вам для уточнения деталей</P>
 
     <form class="application__form the-form">
       <input type="text" name="name" placeholder="Ваше имя" required />
-      <input
-        type="text"
-        name="phone"
-        placeholder="+7 (___) ___-__-__"
-        required
-      />
+      <input type="text" name="phone" placeholder="+7 (___) ___-__-__" required />
       <button type="submit">Отправить</button>
       <div class="text-xs font-light">
         Отправляя заявку я даю согласие на обработку персональных данных
@@ -41,7 +39,11 @@ import SectionHeader from "@/components/SectionHeader.astro";
 
   .application {
     position: relative;
-    padding: 0 !important;
+    padding-top: 0 !important;
+
+    &.is-main {
+      padding: 0 !important;
+    }
 
     .container {
       flex-direction: row;
