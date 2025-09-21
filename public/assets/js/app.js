@@ -308,6 +308,7 @@ let teamSwiperThumbs = new Swiper(".team .team__swiper .team__swiper-thumbs", {
     },
   },
 });
+
 let teamSwiper = new Swiper(".team .team__swiper .team__swiper-main", {
   slidesPerView: 1,
   spaceBetween: 20,
