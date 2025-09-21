@@ -1,25 +1,56 @@
 ---
-import { Image, Icon, H3 } from "ui";
+import { Image, Icon, H3, P, Button } from "ui";
 ---
 
 <footer class="footer">
-  <div class="container">
-    <div class="footer__wrapper">
-      <div class="footer__item group">
-        <a href="/" class="footer__logo">
-          <Image src="logo.svg" />
-          <span class="col">
-            <strong>ДОКТОР КИСЕЛЕВ</strong>
-            <span>КЛИНИКА</span>
+  <div class="footer__top">
+    <div class="container">
+      <a href="/" class="footer__logo" title="Logo">
+        <Image src="logo.svg" />
+      </a>
+
+      <div class="footer__top-content">
+        <P class="footer__address">
+          г. Сочи, ул. Московская, 111 <br />
+          Время работы: с 9:00 до 17:00 <br />
+          суббота и воскресенье — выходные
+        </P>
+        <div class="footer__contacts text-p group">
+          <a href="tel:+79288888888" class="footer__contacts-phone">+7 (928) 888-88-88</a>
+          <a href="mailto:info@gira.ru" class="footer__contacts-email">info@gira.ru</a>
+          <div class="group-row">
+            <a href="#" target="_blank" class="footer__contacts-social" title="Whatsapp">
+              <Icon src="whatsapp.svg" />
+            </a>
+            <a href="#" target="_blank" class="footer__contacts-social" title="Telegram">
+              <Icon src="telegram.svg" />
+            </a>
+          </div>
+        </div>
+        <Button variant="outline" data-modal="form">Запросить цену</Button>
+        <a href="#" target="_blank" title="Подписаться на Telegram" class="footer__follow">
+          <span class="text-sm">
+            Подписывайтесь на наш канал в <br /> Telegram, там много полезных <br /> постов о строительстве
           </span>
+          <Icon src="telegram-large.svg" />
         </a>
+      </div>
+    </div>
+  </div>
 
-        <p>© 2025 . Доктор Киселев</p>
+  <div class="footer__map">
+    <iframe
+      src="https://yandex.uz/map-widget/v1/?ll=39.728836%2C43.593700&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzUxODU4NRKNAdCg0L7RgdGB0LjRjywg0JrRgNCw0YHQvdC-0LTQsNGA0YHQutC40Lkg0LrRgNCw0LksINCh0L7Rh9C4LCDQvNC40LrRgNC-0YDQsNC50L7QvSDQptC10L3RgtGA0LDQu9GM0L3Ri9C5LCDQnNC-0YHQutC-0LLRgdC60LDRjyDRg9C70LjRhtCwLCAxMCIKDaDnHkIVDV8uQg%2C%2C&z=15.52&scroll=false"
+      width="560"
+      height="400"
+      allowfullscreen="true"
+      style="position:relative;"></iframe>
+  </div>
 
-        <a class="text-gray" href="#" target="_blank" title="Политика конфиденциальности">
-          Политика конфиденциальности
-        </a>
-
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="group">
+        <P>© <span id="currentYear">2025</span>, Все права защищены. Студия GIRA. </P>
         <a href="https://seo-tex.ru/" target="_blank" title="Разработка сайта" class="footer__dev">
           <div class="icon">
             <svg
@@ -40,82 +71,9 @@ import { Image, Icon, H3 } from "ui";
           </span>
         </a>
       </div>
-
-      <div class="footer__item">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="/">Цены на услуги</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">О клинике</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Специалисты</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Отзывы</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Контакты</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__item">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="/">Мануальная терапия</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Остеопатия</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Невролог</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Лечение поясничной грыжи</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Лечение грыжи шейного отдела</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Лечение грыжи грудного отдела</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__item">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="/">Лечение протрузии </a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Рефлексотерапия</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Боль в суставах</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Головные боли</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Боли в спине</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">Боли в пояснице</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__item">
-        <div
-          class="footer__license group"
-          data-fancybox="license"
-          data-src="/assets/img/license.png"
-        >
-          <Image src="license.png" />
-          <p>Лицензия №Л123124-24</p>
-        </div>
+      <div class="group">
+        <P>ИП Фамилия И.О. ИНН 999999999999</P>
+        <a href="#" target="_blank" class="text-p underline">Политика конфиденциальности</a>
       </div>
     </div>
   </div>
@@ -125,78 +83,185 @@ import { Image, Icon, H3 } from "ui";
   @use "scss/helpers" as *;
 
   .footer {
+    color: #fff;
+    background: #1e1e1e;
+
     @include media("xl") {
       padding-bottom: rem(70);
     }
 
-    &__wrapper {
-      padding-top: rem(58);
+    &__top {
+      padding: rem(45) 0;
       width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: rem(80) rem(50);
-      border-top: rem(1) solid var(--primary);
 
       @include media("sm") {
-        padding-top: rem(30);
-        gap: rem(40);
+        padding: rem(30) 0;
       }
-    }
 
-    &__item {
-      gap: rem(20);
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(50);
 
-      @include media("2xl") {
-        flex: 1 0 rem(280);
+        @include media("sm") {
+          gap: rem(30);
+        }
       }
-      @include media("sm") {
-        flex-basis: 100%;
+
+      &-content {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: rem(75);
+
+        @include media("3xl") {
+          gap: rem(50);
+        }
+        @include media("2xl") {
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        @include media("lg") {
+          gap: rem(30);
+        }
+        @include media("sm") {
+          gap: rem(20);
+        }
       }
-    }
 
-    .menu {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: rem(15);
+      .btn {
+        color: #fff;
 
-      a {
+        @include media("xs") {
+          width: 100%;
+        }
+
         &:hover {
-          color: var(--primary);
-          text-decoration: underline;
+          color: #000;
+          background: #fff;
+        }
+      }
+    }
+
+    &__map {
+      width: 100%;
+      height: rem(480);
+
+      @include media("lg") {
+        height: rem(400);
+      }
+      @include media("sm") {
+        height: rem(300);
+      }
+      @include media("xs") {
+        height: rem(280);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+
+    &__bottom {
+      padding: rem(24) 0;
+      width: 100%;
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20);
+
+        @include media("xs") {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+        }
+      }
+
+      .group {
+        gap: rem(10);
+
+        &:last-child {
+          align-items: flex-end;
+
+          @include media("xs") {
+            align-items: flex-start;
+          }
         }
       }
     }
 
     &__logo {
-      margin-bottom: rem(10);
-      display: flex;
-      align-items: center;
-      gap: rem(30);
+      display: block;
+    }
 
-      @include media("sm") {
-        gap: rem(20);
+    &__address {
+      @include media("lg") {
+        width: 100%;
+
+        br {
+          display: none;
+        }
       }
+      @include media("sm") {
+        br {
+          display: block;
+        }
+      }
+    }
 
-      img {
-        @include size(rem(82));
-        object-fit: contain;
+    &__contacts {
+      gap: rem(5);
 
-        @include media("sm") {
-          --size: #{rem(70)};
+      .group-row {
+        gap: rem(10);
+      }
+    }
+
+    &__follow {
+      position: relative;
+      padding: rem(20);
+      width: 100%;
+      max-width: rem(350);
+      border: var(--border);
+      line-height: 1.7;
+
+      @include media("xl") {
+        padding-right: rem(50);
+        max-width: 100%;
+
+        br {
+          display: none;
         }
       }
 
-      .col {
-        gap: rem(5);
+      @include media("sm") {
+        padding: rem(15) rem(50) rem(15) rem(15);
+        max-width: 100%;
+        line-height: 1.4;
+      }
+
+      .icon {
+        position: absolute;
+        bottom: rem(20);
+        right: rem(20);
+        --icon-size: #{rem(52)};
+
+        @include media("xl") {
+          bottom: 50%;
+          transform: translateY(50%);
+          --icon-size: #{rem(48)};
+        }
       }
     }
 
     &__dev {
       margin-top: auto;
-      color: #555;
+      color: #a4a4a4;
       font-size: 0.75rem;
       font-weight: 400;
       display: flex;
@@ -207,42 +272,7 @@ import { Image, Icon, H3 } from "ui";
       --icon-size: 1.875rem;
 
       &:hover {
-        color: var(--primary);
-      }
-    }
-
-    &__license {
-      position: relative;
-      margin-top: rem(-30);
-      padding: rem(25) rem(40);
-      width: fit-content;
-      align-items: center;
-      gap: rem(20);
-
-      @include media("sm") {
-        margin-top: 0;
-        width: 100%;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        border-radius: rem(45) rem(45) 0 0;
-
-        @include media("xl") {
-          height: 150%;
-        }
-      }
-
-      img {
-        width: rem(165);
-        cursor: zoom-in;
+        color: #fff;
       }
     }
   }

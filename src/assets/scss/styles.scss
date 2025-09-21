@@ -10,7 +10,7 @@ main {
   padding-top: rem(134);
   width: 100%;
 
-  @include media("xl") {
+  @include media("lg") {
     padding-top: rem(120);
   }
   @include media("lg") {
@@ -47,4 +47,4 @@ section {
   }
 }
 
-// @include show(".products", true, true);
+// @include show(".products2", true, true);
