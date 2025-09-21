@@ -170,10 +170,7 @@ if (!header) {
 
         // Wait for the animation to finish before setting display to 'none'
         tabsBody.addEventListener("transitionend", function handler(event) {
-          if (
-            event.propertyName === "transform" &&
-            !tabsBody.classList.contains("show")
-          ) {
+          if (event.propertyName === "transform" && !tabsBody.classList.contains("show")) {
             tabsBody.style.display = "none";
             tabsContent.innerHTML = "";
             tabsBody.removeEventListener("transitionend", handler);
@@ -197,10 +194,7 @@ if (!header) {
 
           // Wait for the animation to finish before setting display to 'none'
           tabsBody.addEventListener("transitionend", function handler(event) {
-            if (
-              event.propertyName === "transform" &&
-              !tabsBody.classList.contains("show")
-            ) {
+            if (event.propertyName === "transform" && !tabsBody.classList.contains("show")) {
               tabsBody.style.display = "none";
               tabsContent.innerHTML = "";
               tabsBody.removeEventListener("transitionend", handler);
@@ -237,10 +231,7 @@ if (!header) {
     // Add animation for hiding
     tabsBody.classList.remove("show");
     tabsBody.addEventListener("transitionend", function handler(event) {
-      if (
-        event.propertyName === "transform" &&
-        !tabsBody.classList.contains("show")
-      ) {
+      if (event.propertyName === "transform" && !tabsBody.classList.contains("show")) {
         tabsBody.style.display = "none";
         tabsContent.innerHTML = "";
         tabsBody.removeEventListener("transitionend", handler);
@@ -260,31 +251,28 @@ if (currentYear) {
 }
 
 // Swiper
-let certificatesSwiper = new Swiper(
-  ".certificates .certificates__swiper .swiper",
-  {
-    slidesPerView: "auto",
-    spaceBetween: 12,
-    navigation: {
-      nextEl: ".certificates .swiper-button-next",
-      prevEl: ".certificates .swiper-button-prev",
+let certificatesSwiper = new Swiper(".certificates .certificates__swiper .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 12,
+  navigation: {
+    nextEl: ".certificates .swiper-button-next",
+    prevEl: ".certificates .swiper-button-prev",
+  },
+  breakpoints: {
+    475: {
+      slidesPerView: 2,
+      spaceBetween: 15,
     },
-    breakpoints: {
-      475: {
-        slidesPerView: 2,
-        spaceBetween: 15,
-      },
-      1025: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      1280: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 20,
     },
   },
-);
+});
 
 let reviewsSwiper = new Swiper(".reviews .reviews__swiper .swiper", {
   slidesPerView: "auto",
@@ -308,10 +296,36 @@ let reviewsSwiper = new Swiper(".reviews .reviews__swiper .swiper", {
   },
 });
 
+let teamSwiperThumbs = new Swiper(".team .team__swiper .team__swiper-thumbs", {
+  slidesPerView: "auto",
+  spaceBetween: 15,
+  breakpoints: {
+    640: {
+      spaceBetween: 25,
+    },
+    1280: {
+      spaceBetween: 74,
+    },
+  },
+});
+let teamSwiper = new Swiper(".team .team__swiper .team__swiper-main", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  effect: "fade",
+  thumbs: {
+    swiper: teamSwiperThumbs,
+  },
+  breakpoints: {
+    1280: {
+      initialSlide: 2,
+    },
+  },
+});
+
 // Initialize the fancybox
-const fancyboxTriggers = Array.from(
-  document.querySelectorAll("[data-fancybox]"),
-).filter((trigger) => trigger.dataset.fancybox);
+const fancyboxTriggers = Array.from(document.querySelectorAll("[data-fancybox]")).filter(
+  (trigger) => trigger.dataset.fancybox,
+);
 if (fancyboxTriggers) {
   const fancyboxInstances = [];
   fancyboxTriggers.forEach((trigger) => {
@@ -356,11 +370,7 @@ phoneMasks.forEach((input) => {
       })
       .replace(/[+()]/g, "\\$&");
     reg = new RegExp("^" + reg + "$");
-    if (
-      !reg.test(this.value) ||
-      this.value.length < 5 ||
-      (keyCode > 47 && keyCode < 58)
-    )
+    if (!reg.test(this.value) || this.value.length < 5 || (keyCode > 47 && keyCode < 58))
       this.value = newValue;
     if (event.type == "blur" && this.value.length < 5) this.value = "";
 
