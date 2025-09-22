@@ -1,0 +1,55 @@
+---
+import { Section, H2, H3, H4, P, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+
+interface Props {
+  isMain?: boolean;
+}
+
+const { isMain = true } = Astro.props;
+---
+
+<!-- Portfolio -->
+<Section name="portfolio" main={isMain}>
+  <SectionHeader>
+    <H2> <i>Галерея</i> проекта </H2>
+  </SectionHeader>
+
+  <div class="portfolio__list">
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/2.png">
+      <Image class="portfolio__card-img" src="portfolio/2.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/2.png">
+      <Image class="portfolio__card-img" src="portfolio/2.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/1.png">
+      <Image class="portfolio__card-img" src="portfolio/1.png" />
+    </div>
+
+    <div class="portfolio__card" data-fancybox="gallery" data-src="/assets/img/portfolio/3.png">
+      <Image class="portfolio__card-img" src="portfolio/3.png" />
+    </div>
+  </div>
+</Section>
