@@ -6,6 +6,7 @@ export { default as Gallery } from "./Gallery.astro";
 export { default as Gira } from "./Gira.astro";
 export { default as Hero } from "./Hero.astro";
 export { default as Portfolio } from "./Portfolio.astro";
+export { default as Pricing } from "./Pricing.astro";
 export { default as Products } from "./Products.astro";
 export { default as Project } from "./Project.astro";
 export { default as Reviews } from "./Reviews.astro";
