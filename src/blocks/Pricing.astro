@@ -82,7 +82,7 @@ const pricingData = [
 
             <div class="pricing__services">
               {section.services.map((service, index) => (
-                <div class="pricing__service">
+                <div class="pricing__service" data-modal="callback">
                   <div class="col">
                     <div class="pricing__service-name">{service.name}</div>
                   </div>
@@ -90,7 +90,9 @@ const pricingData = [
                     <div class="pricing__service-price">{service.price}</div>
                   </div>
                   <div class="col">
-                    <button class="pricing__service-btn">Заказать</button>
+                    <button class="pricing__service-btn" data-modal="callback">
+                      Заказать
+                    </button>
                   </div>
                 </div>
               ))}
