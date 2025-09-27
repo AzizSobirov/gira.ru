@@ -4,67 +4,135 @@ import SectionHeader from "@/components/SectionHeader.astro";
 
 interface Props {
   isMain?: boolean;
+  secondary?: boolean;
 }
 
-const { isMain = false } = Astro.props;
+const { isMain = false, secondary = false } = Astro.props;
+
+// Dynamic service items data
+const serviceItems = [
+  {
+    id: 1,
+    title: "Дизайн интерьера",
+    description:
+      "Мы строим дома исходя из особенностей участка. Производим полноценный ремонт в помещениях - квартиры или дома",
+    image: "categories/1.png",
+    buttonText: "Смотреть",
+  },
+  {
+    id: 2,
+    title: "Строительство и ремонт",
+    description:
+      "Мы строим дома исходя из особенностей участка. Производим полноценный ремонт в помещениях - квартиры или дома",
+    image: "categories/2.png",
+    buttonText: "Смотреть",
+  },
+  {
+    id: 3,
+    title: "Мебелировка",
+    description:
+      "Мы строим дома исходя из особенностей участка. Производим полноценный ремонт в помещениях - квартиры или дома",
+    image: "categories/3.png",
+    buttonText: "Смотреть",
+  },
+];
 ---
 
 <!-- Services -->
 <Section name="services" main={isMain}>
-  <SectionHeader>
-    <H4>[ услуги и цены ]</H4>
-    <H2> Архитектура, дизайн и <i>цены без сюрпризов</i> </H2>
-  </SectionHeader>
+  {
+    !secondary ? (
+      <>
+        <SectionHeader>
+          <H4>[ услуги и цены ]</H4>
+          <H2>
+            Архитектура, дизайн и <i>цены без сюрпризов</i>
+          </H2>
+        </SectionHeader>
 
-  <div class="services__list group-row">
-    <div class="services__card group">
-      <div class="services__card-title">Индивидуальное строительства дома и ремонт квартир</div>
-      <P>
-        Наша строительная бригада на протяжении более 10 лет ответственно подходит к каждому
-        проекту, каждый проект это великая ответственность за ваш комфорт и уют. На объекте работают
-        только лучшие специалисты своего дела. Строительство дома или ремонта квартиры возможно по
-        вашему готовому дизайн-проекту. Мы предлагаем уникальные архитектурные и дизайнерские
-        решения, которые отражают ваш стиль, вкус и образ жизни.
-      </P>
-      <Button variant="outline" data-modal="callback">Заказать</Button>
-    </div>
+        <div class="services__list group-row">
+          <div class="services__card group">
+            <div class="services__card-title">
+              Индивидуальное строительства дома и ремонт квартир
+            </div>
+            <P>
+              Наша строительная бригада на протяжении более 10 лет ответственно подходит к каждому
+              проекту, каждый проект это великая ответственность за ваш комфорт и уют. На объекте
+              работают только лучшие специалисты своего дела. Строительство дома или ремонта
+              квартиры возможно по вашему готовому дизайн-проекту. Мы предлагаем уникальные
+              архитектурные и дизайнерские решения, которые отражают ваш стиль, вкус и образ жизни.
+            </P>
+            <Button variant="outline" data-modal="callback">
+              Заказать
+            </Button>
+          </div>
 
-    <div class="services__card group">
-      <div class="services__card-title">ДИЗАЙН ПРОЕКТ ПОД КЛЮЧ</div>
-      <P>
-        Вы получите комплексное решение
-        <br />
-        – изысканные интерьерные решения <br />
-        – чертежи по рабочей документации от профессионалов <br />
-        – Разработка индивидуального дизайнерского проекта квартиры или дома
-        <br />
-        – авторский надзор на всех этапах реализации; – помощь в подборе и закупке материалов;
-        <br />
-        – консультации по выбору подрядчиков и строительных бригад.
+          <div class="services__card group">
+            <div class="services__card-title">ДИЗАЙН ПРОЕКТ ПОД КЛЮЧ</div>
+            <P>
+              Вы получите комплексное решение
+              <br />
+              – изысканные интерьерные решения <br />
+              – чертежи по рабочей документации от профессионалов <br />
+              – Разработка индивидуального дизайнерского проекта квартиры или дома
+              <br />
+              – авторский надзор на всех этапах реализации; – помощь в подборе и закупке материалов;
+              <br />– консультации по выбору подрядчиков и строительных бригад.
+              <>
+                <br />
+                <br />
+              </>
+              С нами вы получаете не просто проект, а поддержку на каждом этапе — от идеи до
+              воплощения.
+            </P>
+            <Button variant="outline" data-modal="callback">
+              Заказать
+            </Button>
+          </div>
 
-        <br /><br />
-        С нами вы получаете не просто проект, а поддержку на каждом этапе — от идеи до воплощения.
-      </P>
-      <Button variant="outline" data-modal="callback">Заказать</Button>
-    </div>
-
-    <div class="services__card group">
-      <div class="services__card-title">
-        ТИПОВЫЕ ПРОЕКТЫ ДОМОВ И ГОТОВЫЕ ДИЗАЙН-ПРОЕКТЫ для квартир
+          <div class="services__card group">
+            <div class="services__card-title">
+              ТИПОВЫЕ ПРОЕКТЫ ДОМОВ И ГОТОВЫЕ ДИЗАЙН-ПРОЕКТЫ для квартир
+            </div>
+            <P>
+              Мы предлагаем более 100 готовых проектов, которые помогут сэкономить до 70% затрат на
+              архитектурное проектирование и 100% выигрыша времени.
+              <>
+                <br />
+                <br />
+              </>
+              Выбирая типовое решение, вы получаете полный комплект необходимой документации - уже
+              на следующий день можно приступать к строительству или ремонту квартиры.
+              <>
+                <br />
+                <br />
+              </>
+              По вашему запросу внесём изменения и адаптируем проект под особенности участка и
+              личные пожелания. Это быстро удобно и выгодно.
+            </P>
+            <Button variant="outline" data-modal="callback">
+              Заказать
+            </Button>
+          </div>
+        </div>
+      </>
+    ) : (
+      <div class="services__list group-row">
+        {serviceItems.map((service) => (
+          <div class="services__item">
+            <BgImg src={service.image} class="services__item-bg" />
+            <div class="services__item-content">
+              <H3 class="services__item-title">{service.title}</H3>
+              <P class="services__item-description">{service.description}</P>
+              <Button variant="outline" class="services__item-btn">
+                {service.buttonText}
+              </Button>
+            </div>
+          </div>
+        ))}
       </div>
-      <P>
-        Мы предлагаем более 100 готовых проектов, которые помогут сэкономить до 70% затрат на
-        архитектурное проектирование и 100% выигрыша времени.
-        <br /><br />
-        Выбирая типовое решение, вы получаете полный комплект необходимой документации - уже на следующий
-        день можно приступать к строительству или ремонту квартиры.
-        <br /><br />
-        По вашему запросу внесём изменения и адаптируем проект под особенности участка и личные пожелания.
-        Это быстро удобно и выгодно.
-      </P>
-      <Button variant="outline" data-modal="callback">Заказать</Button>
-    </div>
-  </div>
+    )
+  }
 </Section>
 
 <style lang="scss" is:global>
@@ -140,6 +208,103 @@ const { isMain = false } = Astro.props;
 
       .btn {
         margin-top: auto;
+      }
+    }
+
+    &__item {
+      position: relative;
+      height: rem(400);
+      flex: 1 0 rem(420);
+      overflow: hidden;
+      display: flex;
+
+      @include media("lg") {
+        height: rem(300);
+      }
+
+      @include media("sm") {
+        height: auto;
+        flex-basis: 100%;
+      }
+
+      &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(1);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(
+            circle at 75% 70%,
+            /* 60% → shifted right & down */ rgba(0, 0, 0, 0.3) 25%,
+            /* transparent in the middle */ rgba(0, 0, 0, 1) 75%,
+            rgba(0, 0, 0, 0.9) 100% /* darkest edges */
+          );
+          background-size: cover;
+          background-position: center;
+          z-index: 2;
+        }
+      }
+
+      &-content {
+        position: relative;
+        z-index: 3;
+        padding: rem(45);
+        color: #fff;
+        width: 100%;
+
+        @include media("sm") {
+          padding: rem(20);
+        }
+      }
+
+      &-title {
+        margin-bottom: rem(40);
+        font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+        font-weight: 400;
+        line-height: 1.3;
+
+        @include media("sm") {
+          margin-bottom: rem(20);
+        }
+      }
+
+      &-description {
+        margin-bottom: rem(35);
+
+        @include media("sm") {
+          margin-bottom: rem(20);
+        }
+      }
+
+      &-btn {
+        background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.7));
+        border: none;
+
+        @include media("xs") {
+          width: 100%;
+        }
+
+        &:hover {
+          color: #fff;
+          background: transparent;
+          border: 1px solid currentColor;
+        }
       }
     }
   }

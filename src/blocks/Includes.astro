@@ -1,0 +1,35 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Includes -->
+<Section name="includes">
+  <SectionHeader>
+    <H4>[ состав услуги ]</H4>
+    <H2> Что <i>входит</i> в <i>дизайн-проект</i> </H2>
+  </SectionHeader>
+
+  <div class="includes__swiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="includes__swiper-nav">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .includes {
+    position: relative;
+  }
+</style>

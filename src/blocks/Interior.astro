@@ -1,0 +1,307 @@
+---
+import { Section, H2, H3, H4, P, BgImg, Image, Icon, Button } from "ui";
+import SectionHeader from "@/components/SectionHeader.astro";
+---
+
+<!-- Interior -->
+<Section name="interior">
+  <div class="interior__intro group-row">
+    <div class="interior__intro-text group">
+      <H2>Дизайн <i>интерьера</i> </H2>
+      <P>
+        В целом, конечно, сплочённость команды профессионалов позволяет оценить значение
+        переосмысления внешнеэкономических политик. Наше дело не так однозначно, как может
+        показаться: высокое качество позиционных исследований требует от нас анализа прогресса
+        профессионального сообщества. Принимая во внимание показатели успешности, высокое качество
+        позиционных исследований говорит о возможностях приоретизации разума над эмоциями.
+      </P>
+      <Button variant="outline" data-modal="callback">Получить готовый дизайн-проект</Button>
+    </div>
+
+    <div class="interior__intro-img">
+      <Image src="interior.png" />
+    </div>
+  </div>
+
+  <div class="interior__services group-row">
+    <div class="interior__service">
+      <div class="interior__service-title">ДИЗАЙН-ПРОЕКТ <br /> ЖИЛОГО ПОМЕЩЕНИЯ</div>
+      <div class="group">
+        <div class="text-2xl">Стоимость:</div>
+        <ul class="text-xl">
+          <li>Помещение до 40 м² — 4500 Руб./м²</li>
+          <li>Помещение от 40 м² до 80 м² — 4000 Руб./м²</li>
+          <li>Помещение от 80 м² до 150 м² — 3500 Руб./м²</li>
+          <li>Помещение более 150 м² — 3000 Руб./м²</li>
+        </ul>
+        <div class="text-base">*Стоимость может меняться от сложности и выбранного стиля.</div>
+      </div>
+    </div>
+
+    <div class="interior__service">
+      <div class="interior__service-title">
+        ДИЗАЙН-ПРОЕКТ ЖИЛОГО ПОМЕЩЕНИЯ с эскизными изображениями
+        <span>(без 3D визуализации)</span>
+      </div>
+      <div class="group">
+        <div class="text-2xl">Стоимость:</div>
+        <ul class="text-xl">
+          <li>Помещение до 40 м² — 4500 Руб./м²</li>
+          <li>Помещение от 40 м² до 80 м² — 4000 Руб./м²</li>
+          <li>Помещение от 80 м² до 150 м² — 3500 Руб./м²</li>
+          <li>Помещение более 150 м² — 3000 Руб./м²</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="interior__service">
+      <div class="interior__service-title">
+        ДИЗАЙН-ПРОЕКТ <br /> КОММЕРЧЕСКОГО ПОМЕЩЕНИЯ
+      </div>
+      <div class="group">
+        <div class="text-2xl">Стоимость:</div>
+        <ul class="text-xl">
+          <li>Менее 500 м² — от 2500 Руб./м²</li>
+          <li>Более 500 м² — стоимость рассчитывается индивидуально.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="interior__footer group-row">
+    <P>
+      Проектирование интерьеров — это многогранный и непростой процесс, а выбор дизайнера, который
+      действительно подойдет именно вам, еще сложнее. Основой нашей работы является создание
+      индивидуального дизайна, отражающего личность, образ жизни и предпочтения заказчика. Для этого
+      важно установить доверительные отношения и наладить взаимопонимание между клиентом и
+      дизайнером. Далее вы найдете информацию о том, как строится наша работа, из каких этапов
+      состоит дизайн-проект и что именно вы получите в результате его реализации.
+    </P>
+    <div class="interior__footer-img">
+      <Image src="interior-footer.png" />
+    </div>
+  </div>
+</Section>
+
+<style lang="scss" is:global>
+  @use "scss/helpers" as *;
+
+  .interior {
+    position: relative;
+
+    &__intro {
+      position: relative;
+      height: calc(100vh - rem(134));
+      max-height: rem(1024);
+      width: 100%;
+
+      @include media("lg") {
+        padding-top: rem(50);
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: rem(20);
+      }
+      @include media("sm") {
+        padding-top: rem(30);
+      }
+
+      &-text {
+        width: 100%;
+        max-width: rem(686);
+        gap: rem(60);
+
+        @include media("lg") {
+          gap: rem(40);
+        }
+        @include media("sm") {
+          gap: rem(20);
+        }
+
+        .text-h2 {
+          margin-bottom: rem(20);
+
+          @include media("lg") {
+            margin-bottom: rem(10);
+          }
+          @include media("sm") {
+            margin-bottom: rem(5);
+          }
+        }
+
+        .btn {
+          padding: rem(8) rem(28);
+          width: auto;
+
+          @include media("sm") {
+            margin-top: rem(5);
+          }
+          @include media("xs") {
+            padding: rem(6) rem(20);
+            height: rem(42);
+            font-size: rem(14);
+          }
+        }
+      }
+
+      &-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(rem(-200), -50%);
+        height: 95%;
+        width: fit-content;
+        pointer-events: none;
+        z-index: -1;
+
+        img {
+          height: 100%;
+          min-width: fit-content;
+          object-fit: contain;
+        }
+
+        @include media("lg") {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          width: 100%;
+          height: auto;
+          z-index: 1;
+
+          img {
+            width: 100%;
+            min-width: unset;
+          }
+        }
+      }
+    }
+
+    &__services {
+      margin: rem(40) 0;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: rem(20);
+
+      @include media("sm") {
+        margin: rem(30) 0;
+        gap: rem(10);
+      }
+    }
+
+    &__service {
+      padding: rem(40) rem(35) rem(35);
+      height: rem(595);
+      flex: 1 0 rem(380);
+      color: #353535;
+      font-weight: 300;
+      border: rem(1) solid #353535;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(20);
+
+      @include media("3xl") {
+        padding: rem(30);
+        height: rem(450);
+      }
+      @include media("lg") {
+        height: auto;
+      }
+      @include media("xs") {
+        padding: rem(25) rem(15) rem(15);
+        flex-basis: 100%;
+      }
+
+      &-title {
+        font-size: rem(28);
+
+        @include media("3xl") {
+          font-size: rem(24);
+        }
+
+        span {
+          display: block;
+          font-size: clamp(1rem, 0.9393rem + 0.2589vw, 1.25rem);
+        }
+      }
+
+      .group {
+        margin-top: auto;
+        min-height: rem(235);
+        width: 100%;
+        gap: rem(25);
+
+        @include media("3xl") {
+          min-height: rem(200);
+          gap: rem(15);
+        }
+        @include media("lg") {
+          min-height: auto;
+        }
+      }
+
+      .text-2xl {
+        color: #5e5e5e;
+
+        @include media("3xl") {
+          font-size: rem(20);
+        }
+      }
+
+      .text-xl {
+        margin-bottom: rem(20);
+
+        @include media("3xl") {
+          margin-bottom: rem(10);
+          font-size: rem(16);
+          gap: rem(15);
+        }
+      }
+
+      .text-base {
+        @include media("3xl") {
+          font-size: rem(14);
+        }
+        @include media("sm") {
+          font-size: rem(12);
+        }
+      }
+    }
+
+    &__footer {
+      position: relative;
+      gap: rem(20);
+
+      @include media("lg") {
+        flex-direction: column-reverse;
+      }
+
+      .text-p {
+        text-wrap: pretty;
+      }
+
+      &-img {
+        position: relative;
+        min-width: 40%;
+        height: rem(275);
+
+        @include media("lg") {
+          height: auto;
+        }
+
+        img {
+          min-width: fit-content;
+          height: 100%;
+          object-fit: cover;
+
+          @include media("lg") {
+            min-width: 100%;
+            min-height: rem(150);
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+</style>

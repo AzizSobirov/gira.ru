@@ -7,13 +7,7 @@ interface Props {
   onclick?: string;
 }
 
-const {
-  class: className = "",
-  id,
-  variant = "primary",
-  href,
-  ...rest
-} = Astro.props;
+const { class: className = "", id, variant = "primary", href, ...rest } = Astro.props;
 
 const variantClasses = {
   primary: "btn-primary",
@@ -23,9 +17,7 @@ const variantClasses = {
   white: "btn-white",
 };
 
-const computedClass = ["btn", className, variantClasses[variant]]
-  .filter(Boolean)
-  .join(" ");
+const computedClass = ["btn", className, variantClasses[variant]].filter(Boolean).join(" ");
 
 const Tag = href ? "a" : "button";
 ---

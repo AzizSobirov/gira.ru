@@ -70,6 +70,11 @@ const { isMain = false } = Astro.props;
 
     &__img {
       height: rem(432);
+      width: 80%;
+
+      @include media("3xl") {
+        width: auto;
+      }
 
       @include media("lg") {
         position: relative;
