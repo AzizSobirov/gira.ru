@@ -8,6 +8,9 @@ export default defineConfig({
   integrations: [],
   output: "static",
   compressHTML: false,
+  devToolbar: {
+    enabled: false,
+  },
   build: {
     format: isProduction ? "file" : "directory",
     assets: "assets",

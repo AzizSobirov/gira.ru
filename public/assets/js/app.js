@@ -292,6 +292,38 @@ let teamSwiper = new Swiper(".team .team__swiper .team__swiper-main", {
   },
 });
 
+let productSwiperThumbs = new Swiper(".product .product__swiper .product__swiper-thumbs", {
+  spaceBetween: 10,
+  slidesPerView: 12,
+  grid: {
+    rows: 2,
+    fill: "row",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 5,
+      grid: {
+        rows: 1,
+      },
+    },
+    768: {
+      slidesPerView: 7,
+      spaceBetween: 20,
+      grid: {
+        rows: 2,
+      },
+    },
+  },
+});
+
+let productSwiper = new Swiper(".product .product__swiper .product__swiper-main", {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  thumbs: {
+    swiper: productSwiperThumbs,
+  },
+});
+
 // Initialize the fancybox
 const fancyboxTriggers = Array.from(document.querySelectorAll("[data-fancybox]")).filter(
   (trigger) => trigger.dataset.fancybox,

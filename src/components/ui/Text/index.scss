@@ -28,6 +28,10 @@
 .text-h3 {
   font-size: clamp(1.25rem, 0.8708rem + 1.6181vw, 2.8125rem);
   font-weight: 400;
+
+  i {
+    font-weight: 300;
+  }
 }
 
 .text-h4 {
