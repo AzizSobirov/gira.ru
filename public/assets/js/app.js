@@ -293,24 +293,31 @@ let teamSwiper = new Swiper(".team .team__swiper .team__swiper-main", {
 });
 
 let productSwiperThumbs = new Swiper(".product .product__swiper .product__swiper-thumbs", {
+  slidesPerView: 4,
   spaceBetween: 10,
-  slidesPerView: 12,
-  grid: {
-    rows: 2,
-    fill: "row",
-  },
   breakpoints: {
-    0: {
+    475: {
+      slidesPerView: 6,
+      spaceBetween: 12,
+    },
+    769: {
+      slidesPerView: 8,
+      spaceBetween: 15,
+    },
+    1024: {
       slidesPerView: 5,
+      spaceBetween: 15,
       grid: {
-        rows: 1,
+        rows: 2,
+        fill: "row",
       },
     },
-    768: {
+    1680: {
       slidesPerView: 7,
       spaceBetween: 20,
       grid: {
         rows: 2,
+        fill: "row",
       },
     },
   },

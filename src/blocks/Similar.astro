@@ -4,7 +4,36 @@ import SectionHeader from "@/components/SectionHeader.astro";
 ---
 
 <!-- Similar -->
-<Section name="similar"> .similar </Section>
+<Section name="similar">
+  <H3><i>Похожие</i> проекты</H3>
+
+  <div class="products__list">
+    {
+      Array.from({ length: 4 }).map((_, i) => (
+        <div class="products__card">
+          <a href="/product" class="products__card-link" />
+
+          <div class="products__card-img">
+            <Image src="products/1.png" />
+          </div>
+          <div class="products__card-content">
+            <div class="products__card-category">[ GR999 ]</div>
+            <div class="products__card-title">Проект одноэтажного дома на узком участке </div>
+            <ul class="products__card-details">
+              <li>Площадь: 150 м²</li>
+              <li>Спальни: 3</li>
+              <li>Санузлы: 2</li>
+              <li>Гараж: Есть</li>
+            </ul>
+            <Button href="/product" variant="outline">
+              Подробнее
+            </Button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>
 
 <style lang="scss" is:global>
   @use "scss/helpers" as *;

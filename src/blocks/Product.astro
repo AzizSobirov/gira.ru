@@ -136,7 +136,11 @@ import SectionHeader from "@/components/SectionHeader.astro";
       display: flex;
       align-items: stretch;
       justify-content: flex-start;
-      gap: rem(20);
+      gap: rem(30) rem(20);
+
+      @include media("lg") {
+        flex-direction: column;
+      }
     }
 
     &__swiper {
@@ -147,7 +151,8 @@ import SectionHeader from "@/components/SectionHeader.astro";
       gap: rem(40);
 
       @include media("lg") {
-        gap: rem(30);
+        width: 100%;
+        gap: rem(20);
       }
       @include media("sm") {
         gap: rem(20);
@@ -156,6 +161,16 @@ import SectionHeader from "@/components/SectionHeader.astro";
       &-main {
         width: 100%;
         height: rem(580);
+
+        @include media("lg") {
+          height: rem(400);
+        }
+        @include media("sm") {
+          height: rem(300);
+        }
+        @include media("xs") {
+          height: rem(240);
+        }
 
         .swiper-slide {
           width: 100%;
@@ -173,6 +188,18 @@ import SectionHeader from "@/components/SectionHeader.astro";
 
       &-thumbs {
         width: 100%;
+
+        @include media("lg") {
+          height: rem(85);
+          overflow: visible;
+
+          .swiper-slide {
+            height: 100% !important;
+          }
+        }
+        @include media("xs") {
+          height: rem(70);
+        }
 
         .swiper-slide {
           padding: rem(5);
@@ -203,6 +230,9 @@ import SectionHeader from "@/components/SectionHeader.astro";
 
       @include media("xl") {
         gap: rem(30);
+      }
+      @include media("lg") {
+        width: 100%;
       }
       @include media("sm") {
         gap: rem(20);
