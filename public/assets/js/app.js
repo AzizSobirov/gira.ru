@@ -213,6 +213,25 @@ if (header) {
   });
 }
 
+// Packages
+const packages = document.querySelector(".packages");
+if (packages) {
+  const tabs = packages.querySelectorAll(".packages__tabs-tab");
+  const tabContents = packages.querySelectorAll(".packages__tabs-table");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      tabContents.forEach((c) => c.classList.remove("active"));
+      if (tabContents[index]) {
+        tabContents[index].classList.add("active");
+      }
+    });
+  });
+}
+
 // Footer
 const currentYear = document.getElementById("current-year");
 if (currentYear) {
@@ -273,6 +292,9 @@ let teamSwiperThumbs = new Swiper(".team .team__swiper .team__swiper-thumbs", {
       spaceBetween: 25,
     },
     1280: {
+      spaceBetween: 40,
+    },
+    1680: {
       spaceBetween: 74,
     },
   },
@@ -328,6 +350,38 @@ let productSwiper = new Swiper(".product .product__swiper .product__swiper-main"
   slidesPerView: 1,
   thumbs: {
     swiper: productSwiperThumbs,
+  },
+});
+
+let includesSwiper = new Swiper(".includes .includes__swiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 12,
+  navigation: {
+    nextEl: ".includes .swiper-button-next",
+    prevEl: ".includes .swiper-button-prev",
+  },
+  breakpoints: {
+    475: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    1025: {
+      autoHeight: true,
+      slidesPerView: 2,
+      spaceBetween: 25,
+    },
+  },
+});
+
+let furnishingMarqueeSwiper = new Swiper(".furnishing .furnishing__marquee", {
+  slidesPerView: "auto",
+  spaceBetween: 0,
+  speed: 8000,
+  loop: true,
+  allowTouchMove: false,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
   },
 });
 

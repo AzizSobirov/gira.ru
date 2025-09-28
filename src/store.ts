@@ -1,0 +1,77 @@
+// Package data structure based on the attachment
+export const packages = [
+  {
+    name: "Стандарт",
+    price: "299 999",
+    features: {
+      kitchen: "Индивидуальный проект прямой кухни с обеденной группой",
+      upperModules: "Верхние модули",
+      facades: "МДФ, покрытий пленкой",
+      hardware: "Без доводчиков",
+      countertop: "Из искусственного камня",
+      backsplash: "Отделочная плитка",
+      exhaust: "Встраиваемый/навесной вытяжка",
+      showerPanel: "Нет",
+      dishwasher: "Нет",
+      refrigerator: "Холодильник отдельностоящий",
+      wardrobe: "Распашной 2-створчатый шкаф",
+      tvStand: "Напольная тумба под ТВ",
+    },
+    popular: false,
+  },
+  {
+    name: "Комфорт",
+    price: "449 999",
+    features: {
+      kitchen: "Индивидуальный проект, цвет фасада на выбор",
+      upperModules: "Верхние модули 900 мм",
+      facades: "МДФ, покрытий пленкой или пластиком",
+      hardware: "С доводчиками",
+      countertop: "Из искусственного камня",
+      backsplash: "Отделочная плитка",
+      exhaust: "Встраиваемый/навесной вытяжка карний",
+      showerPanel: "Встраиваемый душевой шкаф",
+      dishwasher: "Нет",
+      refrigerator: "Холодильник отдельностоящий No Frost",
+      wardrobe: "Распашной 4-створчатый шкаф/Шкаф купе",
+      tvStand: "Напольная тумба под ТВ",
+    },
+    popular: true,
+  },
+  {
+    name: "Комфорт+",
+    price: "649 999",
+    features: {
+      kitchen: "Индивидуальный проект, цвет фасада на выбор",
+      upperModules: "2 яруса верхних модулей с антресолями",
+      facades: "МДФ, покрытий пленкой или пластиком",
+      hardware: "С доводчиками",
+      countertop: "Из искусственного камня",
+      backsplash: "Отделочная плитка/встроенная",
+      exhaust: "Встраиваемый/навесной вытяжка карний",
+      showerPanel: "Встраиваемая посудомоечная машина",
+      dishwasher: "Встраиваемый холодильник No Frost",
+      refrigerator: "Встраиваемый холодильник No Frost",
+      wardrobe: "Распашной 4-створчатый шкаф/Шкаф купе",
+      tvStand: "Навесная/встраиваемая тумба под ТВ",
+    },
+    popular: false,
+  },
+];
+
+export const featureLabels = [
+  { key: "kitchen" as keyof (typeof packages)[0]["features"], label: "Кухня" },
+  { key: "upperModules" as keyof (typeof packages)[0]["features"], label: "Верхние модули" },
+  { key: "facades" as keyof (typeof packages)[0]["features"], label: "Фасады" },
+  { key: "hardware" as keyof (typeof packages)[0]["features"], label: "Фурнитура" },
+  { key: "countertop" as keyof (typeof packages)[0]["features"], label: "Мойка и смеситель" },
+  { key: "backsplash" as keyof (typeof packages)[0]["features"], label: "Микроволновая печь" },
+  { key: "exhaust" as keyof (typeof packages)[0]["features"], label: "Вытяжка" },
+  { key: "showerPanel" as keyof (typeof packages)[0]["features"], label: "Душевой шкаф" },
+  { key: "dishwasher" as keyof (typeof packages)[0]["features"], label: "Посудомоечная машина" },
+  { key: "refrigerator" as keyof (typeof packages)[0]["features"], label: "Холодильник" },
+  { key: "wardrobe" as keyof (typeof packages)[0]["features"], label: "Шкаф" },
+  { key: "tvStand" as keyof (typeof packages)[0]["features"], label: "Тумба под ТВ" },
+];
+
+export const tabs = ["Студии", "Односпальная", "Двуспальная", "Двухкомнатная", "Евродвушка"];

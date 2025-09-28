@@ -245,7 +245,7 @@ const { isMain = false } = Astro.props;
         left: 0;
         width: 100%;
 
-        @include media("3xl") {
+        @include media("2xl") {
           overflow: visible;
         }
 
@@ -262,7 +262,7 @@ const { isMain = false } = Astro.props;
             padding 0.3s ease;
           cursor: pointer;
 
-          @include media("xl") {
+          @include media("3xl") {
             width: rem(140);
             height: rem(140);
           }
@@ -299,6 +299,25 @@ const { isMain = false } = Astro.props;
           &.swiper-slide-thumb-active {
             @include media(rem(1280), min-width) {
               padding: rem(15);
+              width: rem(560);
+              height: auto;
+              border: 1px solid #acacac;
+              background: #fff;
+              border-radius: 0;
+
+              img {
+                width: rem(172);
+                height: rem(172);
+                border-radius: 0;
+                filter: grayscale(0);
+              }
+
+              .group {
+                display: flex;
+              }
+            }
+            @include media(rem(1680), min-width) {
+              padding: rem(15);
               width: rem(615);
               height: rem(200);
               border: 1px solid #acacac;
@@ -316,6 +335,7 @@ const { isMain = false } = Astro.props;
                 display: flex;
               }
             }
+
             @include media("xl") {
               border: rem(2) solid #000;
             }

@@ -4,12 +4,180 @@ import SectionHeader from "@/components/SectionHeader.astro";
 ---
 
 <!-- Furnishing -->
-<Section name="furnishing"> .furnishing </Section>
+<Section name="furnishing">
+  <div class="furnishing__intro group-row">
+    <div class="furnishing__intro-text group">
+      <H2>Мебелирование</H2>
+      <P>
+        В целом, конечно, сплочённость команды профессионалов позволяет оценить значение
+        переосмысления внешнеэкономических политик. Наше дело не так однозначно, как может
+        показаться: высокое качество позиционных исследований требует от нас анализа прогресса
+        профессионального сообщества. Принимая во внимание показатели успешности, высокое качество
+        позиционных исследований говорит о возможностях приоретизации разума над эмоциями.
+      </P>
+      <Button variant="outline" data-modal="callback">Получить консультацию</Button>
+    </div>
+
+    <div class="furnishing__intro-img">
+      <Image src="furnishing.png" />
+    </div>
+  </div>
+
+  <Fragment slot="footer">
+    <div class="furnishing__marquee swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+        <div class="swiper-slide">сканди*этно*хай-тек*классика*</div>
+      </div>
+    </div>
+  </Fragment>
+</Section>
 
 <style lang="scss" is:global>
   @use "scss/helpers" as *;
 
   .furnishing {
     position: relative;
+
+    &__intro {
+      position: relative;
+      height: calc(100vh - rem(134));
+      max-height: rem(1024);
+      width: 100%;
+
+      @include media("lg") {
+        padding-top: rem(50);
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: rem(20);
+      }
+      @include media("sm") {
+        padding-top: rem(30);
+      }
+
+      &-text {
+        width: 100%;
+        max-width: rem(686);
+        gap: rem(60);
+
+        @include media("3xl") {
+          max-width: rem(580);
+        }
+        @include media("lg") {
+          gap: rem(40);
+        }
+        @include media("sm") {
+          gap: rem(20);
+        }
+
+        .text-h2 {
+          margin-bottom: rem(20);
+
+          @include media("lg") {
+            margin-bottom: rem(10);
+          }
+          @include media("sm") {
+            margin-bottom: rem(5);
+          }
+        }
+
+        .btn {
+          padding: rem(8) rem(28);
+          width: auto;
+
+          @include media("sm") {
+            margin-top: rem(5);
+          }
+          @include media("xs") {
+            padding: rem(6) rem(20);
+            height: rem(42);
+            font-size: rem(14);
+          }
+        }
+      }
+
+      &-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(rem(-50), -50%);
+        padding-left: rem(100);
+        height: 80%;
+        width: fit-content;
+        pointer-events: none;
+        z-index: -1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          height: 50%;
+          width: 100vw;
+          background: #000;
+        }
+
+        img {
+          height: 100%;
+          min-width: fit-content;
+          object-fit: contain;
+        }
+
+        @include media("3xl") {
+          padding-left: rem(50);
+          height: 65%;
+          transform: translate(0, -50%);
+        }
+        @include media("xl") {
+          &::before {
+            display: none;
+          }
+        }
+        @include media("lg") {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          padding-left: 0;
+          width: 100%;
+          height: fit-content;
+          z-index: 1;
+
+          img {
+            width: 100%;
+            height: auto;
+            min-width: 100%;
+            max-height: rem(500);
+          }
+        }
+      }
+    }
+
+    &__marquee {
+      width: 100%;
+      font-size: clamp(1rem, 0.8786rem + 0.5178vw, 1.5rem);
+      overflow: hidden;
+
+      @include media("lg") {
+        margin-top: rem(40);
+      }
+
+      .swiper-wrapper {
+        transition-timing-function: linear !important;
+      }
+
+      .swiper-slide {
+        width: fit-content !important;
+      }
+    }
   }
 </style>
